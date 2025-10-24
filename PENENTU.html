@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penentu Kelayakan Sertifikasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Penilaian Kelayakan Sertifikasi EC</h1>
+        </header>
+
+        <form id="form-kelayakan">
+            
+            <div id="error-message"></div>
+
+            <div class="form-section">
+                <h2>Bagian 1: Data Diri</h2>
+                <div class="input-group">
+                    <label for="nama">Nama Siswa:</label>
+                    <input type="text" id="nama" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Bagian 2: Kehadiran (Total 12 Pertemuan)</h2>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="masuk">Masuk</label>
+                        <input type="number" id="masuk" min="0" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tidak_masuk_tugas">Absen (Tugas)</label>
+                        <input type="number" id="tidak_masuk_tugas" min="0" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tidak_masuk">Absen (Alpha)</label>
+                        <input type="number" id="tidak_masuk" min="0" value="0" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Bagian 3: Nilai Ujian (0-100)</h2>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="ujian_tulis">Ujian Tulis</label>
+                        <input type="number" id="ujian_tulis" min="0" max="100" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ujian_lisan">Ujian Lisan</label>
+                        <input type="number" id="ujian_lisan" min="0" max="100" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ujian_praktek">Ujian Praktek</label>
+                        <input type="number" id="ujian_praktek" min="0" max="100" value="0" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-button">Hitung Kelayakan</button>
+        </form>
+
+        <div id="hasil-penilaian">
+            <h2>HASIL PENILAIAN</h2>
+            <div class="hasil-item">
+                <span>Nama:</span>
+                <strong id="hasil-nama"></strong>
+            </div>
+            <hr>
+            <div class="hasil-grid">
+                <div class="hasil-item">
+                    <span>Presentase Kehadiran:</span>
+                    <strong id="hasil-presentase"></strong>
+                </div>
+                <div class="hasil-item">
+                    <span>Nilai Ujian Akhir:</span>
+                    <strong id="hasil-nilai-ujian"></strong>
+                </div>
+            </div>
+            <div class="hasil-item">
+                <span>Skor Keaktifan:</span>
+                <strong id="hasil-keterangan-keaktifan"></strong>
+            </div>
+            <hr>
+            
+            <div id="status-kelayakan"></div>
+            <ul id="alasan-kelayakan"></ul>
+            <p id="predikat-akhir"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
